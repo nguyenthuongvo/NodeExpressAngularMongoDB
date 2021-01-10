@@ -1,0 +1,22 @@
+<div class="container">
+    <mat-form-field appearance="fill" [style.width.%]="100">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="customer.name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [style.width.%]="100">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="customer.phone">
+    </mat-form-field>
+
+    <app-date-picker [label]="'Order Date'" [(value)]="customer.orderDate"></app-date-picker>
+
+    <mat-form-field appearance="fill" [style.width.%]="100">
+      <mat-label>Delivery Date</mat-label>
+      <input matInput [(ngModel)]="customer.deliveryDate">
+    </mat-form-field>
+
+    <div align="end" class="head-tool-bar">
+      <button mat-raised-button color="primary" (click)="onSave()" >Save</button>
+    </div>
+</div>

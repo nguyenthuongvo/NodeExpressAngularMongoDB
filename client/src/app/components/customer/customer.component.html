@@ -1,0 +1,52 @@
+<div align="end" class="head-tool-bar">
+    <button mat-raised-button class="ml-1" *ngIf="isEdit === false" (click)="isEdit=true">Add new</button>
+    <button mat-raised-button class="ml-1" *ngIf="isEdit === true" (click)="isEdit=false">Close</button>
+</div>
+
+<div  *ngIf="!isEdit">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> Phone </th>
+      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="orderDate">
+      <th mat-header-cell *matHeaderCellDef> Order Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.orderDate | date:'dd/MM/YYYY'}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="deliveryDate">
+      <th mat-header-cell *matHeaderCellDef> Order Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.deliveryDate}} </td>
+    </ng-container>
+
+
+     <!-- Weight Column -->
+     <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element">
+         <button mat-raised-button (click)="editCustomer(element)">Edit</button>
+      </td>
+    </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+
+<app-customer-edit *ngIf="isEdit" (onClose)="onEditClose($event)"></app-customer-edit>

@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.button-header {
+    text-align: right;
+    margin: 1em;
+}
+
+.ml-1{
+    margin-left: 1em;
+}
+
+.head-tool-bar{
+    margin-top: 1em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+}

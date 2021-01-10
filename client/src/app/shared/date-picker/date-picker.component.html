@@ -1,0 +1,5 @@
+<mat-form-field appearance="fill" [style.width.%]="100" class="demo-full-width" class="form-group"> 
+    <input required matInput [matDatepicker]="picker" name="date" [placeholder]="label" class="form-control" (change)="dateChange()" [(ngModel)]="flightSchedule.date"> 
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> 
+    <mat-datepicker touchUi="true" #picker></mat-datepicker> 
+</mat-form-field>
