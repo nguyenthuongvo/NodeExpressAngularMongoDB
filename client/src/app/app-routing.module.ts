@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomerComponent } from './components/customer/customer.component';
+import { LoginComponent } from './components/login/login.component';
+import { 
+  AuthGuardService as AuthGuard 
+} from '../app/services/authGuard/auth-guard.service';
+import { RootComponent } from './components/root/root.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'customer', pathMatch: 'full' },
-  { path: 'customer', component: CustomerComponent },
+  { path: '',  pathMatch: 'full', component: RootComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

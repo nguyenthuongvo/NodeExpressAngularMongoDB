@@ -1,0 +1,15 @@
+<div class="container">
+    <mat-form-field appearance="fill" [style.width.%]="100">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [style.width.%]="100">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="pwd">
+    </mat-form-field>
+
+    <div align="end" class="head-tool-bar">
+      <button mat-raised-button color="primary" (click)="login()" >Login</button>
+    </div>
+</div>

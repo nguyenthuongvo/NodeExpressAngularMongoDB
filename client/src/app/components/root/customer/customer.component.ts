@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from 'src/app/services/customer.service'
+import { CustomerService } from 'src/app/services/customer/customer.service'
 import { DatepickerComponent } from 'src/app/shared/date-picker/date-picker.component'
 
 export interface PeriodicElement {

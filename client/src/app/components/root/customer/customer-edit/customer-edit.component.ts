@@ -1,5 +1,5 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
-import { CustomerService } from 'src/app/services/customer.service'
+import { CustomerService } from 'src/app/services/customer/customer.service'
 import {FormControl} from '@angular/forms';
 
 @Component({

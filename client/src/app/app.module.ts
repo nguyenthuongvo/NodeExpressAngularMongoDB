@@ -10,8 +10,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
-import { CustomerComponent } from './components/customer/customer.component';
-import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
+import { CustomerComponent } from './components/root/customer/customer.component';
+import { CustomerEditComponent } from './components/root/customer/customer-edit/customer-edit.component';
 import { DatepickerComponent } from './shared/date-picker/date-picker.component';
 
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -30,13 +30,17 @@ import {
   MatSidenavModule,
   MAT_DRAWER_DEFAULT_AUTOSIZE
 } from "@angular/material/sidenav";
+import { LoginComponent } from './components/login/login.component';
+import { RootComponent } from './components/root/root.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
     CustomerEditComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    LoginComponent,
+    RootComponent
   ],
   imports: [
     BrowserModule,

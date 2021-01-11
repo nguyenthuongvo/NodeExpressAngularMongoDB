@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const URL_CUSTOMER = "http://localhost:8080/api/customers";
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,11 +12,11 @@ export class CustomerService {
   ) { }
 
   public findAll(): Observable<any> {
-    return this.http.get(URL_CUSTOMER);
+    return this.http.get("/api/customers");
   }
 
   public save(customer: any): Observable<any> {
-    return this.http.post(URL_CUSTOMER, Object.assign({}, customer));
+    return this.http.post("/api/customers", Object.assign({}, customer));
   }
 
 }
