@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,7 @@ export class AuthService {
 
   public isAuthenticated() : Boolean {
     let userData = localStorage.getItem('userInfo')
-    if(userData && JSON.parse(userData)){
+    if(userData && Object.keys(JSON.parse(userData)).length){
       return true;
     }
     return false;
