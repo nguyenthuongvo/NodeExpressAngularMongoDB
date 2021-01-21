@@ -5,3 +5,8 @@
 .example-sidenav {
     width: 15em;
 }
+
+.root-content{
+    margin-left: 1em;
+    margin-right: 1em;
+}

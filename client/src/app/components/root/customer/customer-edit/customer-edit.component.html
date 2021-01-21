@@ -9,12 +9,9 @@
       <input matInput [(ngModel)]="customer.phone">
     </mat-form-field>
 
-    <app-date-picker [label]="'Order Date'" [(value)]="customer.orderDate"></app-date-picker>
+    <app-date-picker [label]="'Order Date'" [(value)]="customer.orderDate" (valueChange)="showValue($event)"></app-date-picker>
 
-    <mat-form-field appearance="fill" [style.width.%]="100">
-      <mat-label>Delivery Date</mat-label>
-      <input matInput [(ngModel)]="customer.deliveryDate">
-    </mat-form-field>
+    <app-date-picker [label]="'Delivery Date'" [(value)]="customer.deliveryDate"></app-date-picker>
 
     <div align="end" class="head-tool-bar">
       <button mat-raised-button color="primary" (click)="onSave()" >Save</button>

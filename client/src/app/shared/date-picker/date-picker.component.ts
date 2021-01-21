@@ -44,16 +44,23 @@ export class DatepickerComponent {
   date = new FormControl(moment());
 
   @Output() valueChange = new EventEmitter<Date>();
-  @Input() value: Date = new Date(); // decorate the property with @Input()
+  
+  _value: any;
+  @Input()
+  get value() {
+    return this._value;
+  }
+
+  set value(v: Date) {
+    this._value = v;
+  }
+
 
   @Input() label: string = '';
 
-  flightSchedule = {
-    date: new Date()
-  }
-
-  dateChange(){
-    this.valueChange.emit(this.flightSchedule.date);
+  dateChange(event: any){
+    console.log(event);
+    this.valueChange.emit(this.value);
   }
 }
 

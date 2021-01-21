@@ -1,9 +1,11 @@
 <div align="end" class="head-tool-bar">
-    <button mat-raised-button class="ml-1" *ngIf="isEdit === false" (click)="isEdit=true">Add new</button>
+    <button mat-raised-button class="ml-1" *ngIf="isEdit === false" (click)="showAddNew()">Add new</button>
     <button mat-raised-button class="ml-1" *ngIf="isEdit === true" (click)="isEdit=false">Close</button>
 </div>
 
-<div  *ngIf="!isEdit">
+<app-customer-edit [customer]="customerEdit" *ngIf="isEdit" (onClose)="onEditClose($event)"></app-customer-edit>
+
+<div>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -24,13 +26,13 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="orderDate">
       <th mat-header-cell *matHeaderCellDef> Order Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.orderDate | date:'dd/MM/YYYY'}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.orderDate | date:'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="deliveryDate">
       <th mat-header-cell *matHeaderCellDef> Order Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.deliveryDate}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.deliveryDate | date:'dd/MM/yyyy' }} </td>
     </ng-container>
 
 
@@ -48,5 +50,3 @@
   </table>
 
 </div>
-
-<app-customer-edit *ngIf="isEdit" (onClose)="onEditClose($event)"></app-customer-edit>

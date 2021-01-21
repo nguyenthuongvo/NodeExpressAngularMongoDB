@@ -1,6 +1,6 @@
-import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter,  Input } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer/customer.service'
-import {FormControl} from '@angular/forms';
+import {Customer} from '../../../../models/customer/customer.model'
 
 @Component({
   selector: 'app-customer-edit',
@@ -13,12 +13,19 @@ export class CustomerEditComponent implements OnInit {
     private customerService : CustomerService
   ) {}
 
-  customer = {
-    name: '',
-    phone: '',
-    orderDate: new Date(),
-    deliveryDate: ''
+
+  _customer: any;
+ 
+  @Input()
+  get customer() {
+    return this._customer;
   }
+
+
+  set customer(value: Customer) {
+    this._customer = value;
+  }
+
 
   @Output() onClose = new EventEmitter<boolean>();
 
@@ -32,6 +39,10 @@ export class CustomerEditComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  showValue(value: Date) {
+    console.log(value);
   }
 
 }

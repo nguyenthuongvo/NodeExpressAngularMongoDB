@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/services/customer/customer.service'
-import { DatepickerComponent } from 'src/app/shared/date-picker/date-picker.component'
-
-export interface PeriodicElement {
-  name: string;
-  phone: string;
-  orderDate: Date;
-  deliveryDate: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {name: "Nguyen", phone: 'Hydrogen', orderDate: new Date(), deliveryDate: 'H'}
-];
+import { Customer } from 'src/app/models/customer/customer.model'
 
 @Component({
   selector: 'app-customer',
@@ -25,7 +14,13 @@ export class CustomerComponent implements OnInit {
   ) {}
 
   displayedColumns: string[] = ['name', 'phone', 'orderDate', 'deliveryDate', 'action'];
-  dataSource = ELEMENT_DATA;
+  dataSource: Customer[] = [];
+  customerEdit: Customer = {
+    name: '',
+    phone: '',
+    orderDate: new Date(),
+    deliveryDate: new Date()
+  };
   
   isEdit = false;
 
@@ -47,11 +42,15 @@ export class CustomerComponent implements OnInit {
     this.loadCustomer();
   }
 
-  editCustomer(index: number){
-
-    console.log(index);
-
+  editCustomer(customerSelected: Customer){
+    this.customerEdit = customerSelected;
+    this.isEdit = true;
   }
 
+
+  showAddNew() {
+    this.customerEdit = <Customer>{};
+    this.isEdit = true;
+  }
 
 }
