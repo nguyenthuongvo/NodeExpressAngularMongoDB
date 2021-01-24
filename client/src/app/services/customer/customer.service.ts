@@ -16,9 +16,14 @@ export class CustomerService {
     return this.http.get("/api/customers");
   }
 
-  public save(customer: Customer): Observable<any> {
+  public create(customer: Customer): Observable<any> {
     console.log(customer);
     return this.http.post("/api/customers", Object.assign({}, customer));
+  }
+
+  public save(customer: Customer): Observable<any> {
+    console.log(customer);
+    return this.http.put("/api/customers/" + customer.id, Object.assign({}, customer));
   }
 
 }

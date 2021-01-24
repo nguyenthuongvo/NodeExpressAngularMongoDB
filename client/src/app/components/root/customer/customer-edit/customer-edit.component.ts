@@ -41,6 +41,10 @@ export class CustomerEditComponent implements OnInit {
     });
   }
 
+  executeClose() {
+    this.onClose.emit(true);
+  }
+
   showValue(value: Date) {
     console.log(value);
   }

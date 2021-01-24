@@ -25,6 +25,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker'
 import { MatNativeDateModule, MAT_DATE_FORMATS } from '@angular/material/core';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import {
   MatSidenavModule,
@@ -60,7 +62,9 @@ import { RootComponent } from './components/root/root.component';
     MatFormFieldModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatGridListModule,
+    MatPaginatorModule
   ],
   providers: [
     {

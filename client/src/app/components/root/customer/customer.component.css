@@ -20,3 +20,25 @@ table {
     margin-right: 2em;
     margin-bottom: 1em;
 }
+
+.customer-list-content {
+    height: 100%;
+    width: 100%; 
+    overflow-y: scroll; 
+}
+
+md-grid-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.customer-info-left{
+    height: 100%;
+    width: 100%;
+}
+
+/* 
+mat-grid-tile {
+    padding-top: calc((20% - 0.75px) * 1 + 0px) !important;
+} */
