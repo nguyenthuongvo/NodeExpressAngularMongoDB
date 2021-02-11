@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService : AuthService, private router : Router) { }
 
   ngOnInit() {
-
+    this.authService.clearSession();
   }
 
   email: string = '';
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   login(){
     this.authService.validate(this.email, this.pwd)
     .then((response: any) => {
-      this.authService.setUserInfo(response["data"]);
+      this.authService.setUserInfo(response.message["data"]);
       this.router.navigate(['']);
     })
   }

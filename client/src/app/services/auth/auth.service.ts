@@ -25,4 +25,8 @@ export class AuthService {
   public validate(email: string, password: string) {
     return this.http.post('/api/authenticate', {'username' : email, 'password' : password}).toPromise()
   }
+
+  public clearSession() {
+    localStorage.removeItem('userInfo');
+  }
 }

@@ -1,0 +1,16 @@
+mat-card {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+}
+
+.login-page{
+    padding: 5em;
+    background-color: #3f51b5;
+    height: 100%;
+}

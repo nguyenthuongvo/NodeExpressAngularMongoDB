@@ -22,7 +22,16 @@ exports.auth = () => {
 }
 
 exports.authenticate = (req, res) => {
-    res.status(200).json({"statusCode" : 200 ,"message" : {"data" : {"user" : "root"}}});
+    console.log(req.body)
+    if (req.body) {
+        if (req.body.username && req.body.password) {
+            res.status(200).json({"statusCode" : 200 ,"message" : {"data" : {"user" : "root"}}});
+        } else {
+            res.status(401);
+        }
+    } else {
+        res.status(404);
+    }
 };
 
 passport.use(new LocalStrategy(
